@@ -1,4 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './Theme';
+
+const overflowBg = theme.colors.bg.c3;
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -15,6 +18,21 @@ export const GlobalStyle = createGlobalStyle`
     
     #root {
         width: 100%;
+        min-width: 320px;
+        max-width: 2000px;
+    }
+
+    ::-webkit-scrollbar {
+        background: ${overflowBg};
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: ${({theme}) => theme.colors.bg.c5};
+        border-radius: 50px;    
+        border: 2px solid ${overflowBg};
+        border-top: 3px solid ${overflowBg};
+        border-bottom: 3px solid ${overflowBg};
     }
 
     * {
@@ -25,15 +43,23 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         display: flex;
-        min-width: 320px;
+        justify-content: center;
         min-height: 100vh;
         background-color: ${({theme}) => theme.colors.bg.c1};
     }
 
-    h1 {
-        font-size: 4rem;
-        line-height: 5rem;
+    a {
+        color: inherit;
+    }
+
+    h1, h2, h3, .highlightText {
+        font-family: 'Fira Sans', sans-serif;
+        letter-spacing: 1px;
     }
 `;

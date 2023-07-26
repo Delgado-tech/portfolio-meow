@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import lightPawsIcon from '../../../assets/light-paws.svg';
-import { GridContainer } from '../../styles/GridContainer.style';
 
 export const ApresentationContainer = styled.section`
-    margin-top: 120px;
+    margin-top: 10rem;
 
     figure {
         max-width: 360px;
@@ -28,6 +27,9 @@ export const ApresentationContainer = styled.section`
             color: ${({theme}) => theme.colors.fg.c4};
             padding-left: 3rem;
             position: relative;
+            font-size: 4rem;
+            line-height: 5rem;
+
 
             &::before {
                 content: '';
@@ -72,5 +74,6 @@ export const ApresentationContainer = styled.section`
         background-repeat: no-repeat;
         background-position: center top;
         right: 0;
+        z-index: -1;
     }
 `;

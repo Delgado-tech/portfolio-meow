@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-    margin-top: 30px;
+    background-color: ${({theme}) => theme.colors.bg.c1};;
+    position: sticky;
+    top: 0;
+    padding: 2rem 0 1.5rem 0;
+    z-index: 1000;
 
-    & h1 {
-        cursor: pointer;
+    & h2 {
         font-family: 'Fira Sans', sans-serif;
         font-size: 2.5rem;
         color: ${({theme}) => theme.colors.fg.c4};
