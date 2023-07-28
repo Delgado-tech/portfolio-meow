@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ListCourseItemContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     gap: 0.5rem;
     position: relative;

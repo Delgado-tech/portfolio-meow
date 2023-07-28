@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { DecoTitleBlack } from '../../styles/DecoTitle.style';
 import { BigParagraphWhite } from '../../styles/BigParagraph.style';
 import darkPawsIcon from '../../../assets/dark-paws.svg';
+import { breakpoints } from '../../../env/breakpoints';
 
 export const EducationContainer = styled.section`
     background-color: ${({theme}) => theme.colors.fg.c5};
@@ -15,7 +16,7 @@ export const EducationContainer = styled.section`
     & section {
         grid-column: 6 / span 7;
 
-        ${BigParagraphWhite} {
+        & ${BigParagraphWhite} {
             font-size: 1rem;
             line-height: 1.5rem;
             padding-bottom: 5rem;
@@ -23,14 +24,13 @@ export const EducationContainer = styled.section`
 
         & .education_cardHighlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 8rem;
         }
 
         & .education_courseHeader {
             display: flex;
-            align-items: center;
             position: relative;
 
             & figure {
@@ -43,6 +43,11 @@ export const EducationContainer = styled.section`
                     width: 100%;
                 }
             }
+
+            @media screen and (min-width: ${breakpoints.w800}) {
+                align-items: center;
+            }
+            
         }
 
         & .listCourses {
@@ -61,7 +66,42 @@ export const EducationContainer = styled.section`
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center top;
-        left: 0;
+        left: 12%;
         top: 32rem;
     }
+
+
+    @media screen and (max-width: ${breakpoints.w1250}) {
+        & ${DecoTitleBlack} {
+            width: auto;
+        }
+
+        & section {
+            grid-column: span 12;  
+        }
+
+        & .dec {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: ${breakpoints.w800}) {
+        & .education_courseHeader {
+            flex-direction: column;
+            align-items: left;
+            gap: 0.5rem;
+
+            & figure {
+                position: static !important;
+            }
+
+        }
+
+        & .listCourseItem_progress, & .listCourseItem_progressFinished {
+            position: static !important;
+            width: auto !important;
+        }
+    }
+
+    
 `;

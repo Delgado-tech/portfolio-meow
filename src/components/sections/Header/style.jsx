@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../../env/breakpoints';
 
 export const HeaderContainer = styled.header`
     background-color: ${({theme}) => theme.colors.bg.c1};;
@@ -31,6 +32,12 @@ export const HeaderContainer = styled.header`
                 color: ${({theme}) => theme.colors.primary.p1};
                 border-bottom: 1px solid ${({theme}) => theme.colors.primary.p1};
             }
+        }
+    }
+
+    @media screen and (max-width: ${breakpoints.w500}) {
+        & ul {
+            display: none;
         }
     }
 `;

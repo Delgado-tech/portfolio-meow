@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 import lightPawsIcon from '../../../assets/light-paws.svg';
+import { breakpoints } from '../../../env/breakpoints';
 
 export const ApresentationContainer = styled.section`
     margin-top: 10rem;
 
+
+
     figure {
+        grid-column: span 4;
         max-width: 360px;
         min-width: 256px;
         height: 500px;
-        grid-column: span 4;
     
         img {
             width: 100%;
@@ -34,7 +37,7 @@ export const ApresentationContainer = styled.section`
             &::before {
                 content: '';
                 position: absolute;
-                width: 10px;
+                width: 0.635rem;
                 height: 100%;
                 border-radius: 2px;
                 left: 0;
@@ -56,8 +59,8 @@ export const ApresentationContainer = styled.section`
             &::before {
                 content: '';
                 position: absolute;
-                width: 10px;
-                height: 40px;
+                width: 0.635rem;
+                height: min(100%, 40px);
                 left: 0;
                 background: ${({theme}) => theme.colors.gradient.g1.toBottom};
                 border-radius: 2px;
@@ -73,7 +76,46 @@ export const ApresentationContainer = styled.section`
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center top;
-        right: 0;
+        right: 12%;
         z-index: -1;
+    }
+
+    @media screen and (max-width: ${breakpoints.w1250}) {
+        & figure, & article {
+            grid-column: span 12;
+        }
+
+        & figure {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            height: auto;
+
+            & img {
+                max-width: 600px;
+            }
+        }
+
+        & article > p {
+            min-width: auto;
+        }
+
+        & .dec {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: ${breakpoints.w500}) {
+        article h1 {
+            font-size: 3.25rem;
+            line-height: 4rem;
+        }
+    }
+
+    @media screen and (max-width: ${breakpoints.w350}) {
+        article h1 {
+            font-size: 2.75rem;
+            line-height: 3rem;
+        }
     }
 `;

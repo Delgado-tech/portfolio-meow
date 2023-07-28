@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './Theme';
+import { breakpoints } from './env/breakpoints';
 
 const overflowBg = theme.colors.bg.c3;
 
@@ -14,12 +15,24 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
+
+        @media screen and (max-width: ${breakpoints.w800}) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: ${breakpoints.w600}) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: ${breakpoints.w500}) {
+            font-size: 10px;
+        }
+
     }    
     
     #root {
         width: 100%;
         min-width: 320px;
-        max-width: 2000px;
     }
 
     ::-webkit-scrollbar {
@@ -48,8 +61,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        display: flex;
-        justify-content: center;
         min-height: 100vh;
         background-color: ${({theme}) => theme.colors.bg.c1};
     }

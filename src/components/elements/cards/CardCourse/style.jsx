@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-const breakpoints = {
-    w1550: "1550px"
-};
-
 export const CardContainer = styled.div`
     position: relative;
     display: flex;
