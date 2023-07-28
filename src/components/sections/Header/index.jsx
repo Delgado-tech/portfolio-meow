@@ -10,7 +10,7 @@ function Component() {
 
         document.querySelectorAll('audio').forEach(e => e.pause());
 
-        let audio = new Audio(`../../../../src/assets/audio/meow${audioId}.mp3`);
+        let audio = new Audio(`/audio/meow${audioId}.mp3`);
         audio.play();
 
         if (audioId >= 4) setAudioId(0);
