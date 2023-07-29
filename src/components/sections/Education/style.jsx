@@ -74,6 +74,7 @@ export const EducationContainer = styled.section`
     @media screen and (max-width: ${breakpoints.w1250}) {
         & ${DecoTitleBlack} {
             width: auto;
+            color: ${({theme}) => theme.colors.bg.c3}
         }
 
         & section {

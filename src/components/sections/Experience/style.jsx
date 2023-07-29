@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { BigParagraphBlack } from '../../styles/BigParagraph.style';
 import { breakpoints } from '../../../env/breakpoints';
+import { DecoTitleWhite } from '../../styles/DecoTitle.style';
 
 export const ExperienceConteiner = styled.section`
     padding: 10rem 0;
@@ -17,6 +18,11 @@ export const ExperienceConteiner = styled.section`
     }
 
     @media screen and (max-width: ${breakpoints.w1250}) {
+
+        & ${DecoTitleWhite} {
+            color: ${({theme}) => theme.colors.fg.c2}
+        }
+
         & section {
             grid-column: span 12;
         }
